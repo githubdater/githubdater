@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<GitHubUpdateManifest>
+  <Application Name="GitHubdater Sample App">
+    <Version Tag="v0.0.0" IsPreRelease="False" />
+  </Application>
+  <GitHubRepository>
+    <Owner>githubdater</Owner>
+    <Name>sample-app</Name>
+    <ReleaseFiles>
+      <string>githubdater-sample-app-{version}.zip</string>
+    </ReleaseFiles>
+  </GitHubRepository>
+  <AllowPreRelease>False</AllowPreRelease>
+  <InstallType>single-zip</InstallType>
+</GitHubUpdateManifest>
