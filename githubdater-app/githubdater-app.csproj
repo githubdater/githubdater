@@ -101,16 +101,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="githubdate_logo_256px.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\githubdater-core\githubdater-core.csproj">
       <Project>{220c97b1-e5fd-4cf2-8457-55650e854cd7}</Project>
       <Name>githubdater-core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="githubdater_16x16.ico" />
+    <Resource Include="logo-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

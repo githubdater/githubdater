@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GitHubdater"
         mc:Ignorable="d"
-        Title="GitHubdater" Height="109.2" Width="385" ResizeMode="NoResize" Icon="githubdater_16x16.ico" ContentRendered="Window_ContentRendered">
+        Title="GitHubdater" Height="109.2" Width="385" ResizeMode="NoResize" Icon="logo-32.png" ContentRendered="Window_ContentRendered">
     <Grid Margin="0,0,3,-0.4">
         <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="5" Margin="10,36,-3,0" VerticalAlignment="Top" Width="355" BorderThickness="0" />
         <Label x:Name="lblTitle" Content="Preparing..." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.694,-0.25" Padding="0,5,5,5"/>
