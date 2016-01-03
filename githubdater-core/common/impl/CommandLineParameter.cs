@@ -13,10 +13,11 @@ namespace NGitHubdater
 
         public static readonly CommandLineParameter UpdateManifestName = new CommandLineParameter('u', "update-manifest-name");
         public static readonly CommandLineParameter UpdateManifestType = new CommandLineParameter('t', "update-manifest-type");
-        public static readonly CommandLineParameter UpdateManifestOwner = new CommandLineParameter('o', "update-manifest-owner");
+
+        /*public static readonly CommandLineParameter UpdateManifestOwner = new CommandLineParameter('o', "update-manifest-owner");
         public static readonly CommandLineParameter UpdateManifestRepository = new CommandLineParameter('r', "update-manifest-repository");
         public static readonly CommandLineParameter UpdateManifestFiles = new CommandLineParameter('f', "update-manifest-files");
-        public static readonly CommandLineParameter UpdateManifestInstallType = new CommandLineParameter('i', "update-manifest-install-type");
+        public static readonly CommandLineParameter UpdateManifestInstallType = new CommandLineParameter('i', "update-manifest-install-type");*/
 
         public static IEnumerable<CommandLineParameter> KnownParameters
         {
@@ -26,10 +27,10 @@ namespace NGitHubdater
                 yield return FollowUpProcess;
                 yield return UpdateManifestName;
                 yield return UpdateManifestType;
-                yield return UpdateManifestOwner;
+                /*yield return UpdateManifestOwner;
                 yield return UpdateManifestRepository;
                 yield return UpdateManifestFiles;
-                yield return UpdateManifestInstallType;
+                yield return UpdateManifestInstallType;*/
             }
         }
 
