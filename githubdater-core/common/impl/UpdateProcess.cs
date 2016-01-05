@@ -95,7 +95,16 @@ namespace NGitHubdater
             if (pid <= 0)
                 return null;
 
-            return Process.GetProcessById(pid);
+            try
+            {
+                return Process.GetProcessById(pid);
+            }
+            catch (ArgumentException ae)
+            {
+                Console.Error.Write(ae);
+                return null;
+            }
+            
         }
 
         public void Execute(Action<IProgress> progressCallback)
