@@ -42,9 +42,9 @@ namespace GitHubdater
 
             IDictionary<CommandLineParameter, string> parameters = CommandLineParameter.Parse(Environment.GetCommandLineArgs());
 
-            if (parameters != null)
+            /*if (parameters != null)
                 foreach (KeyValuePair<CommandLineParameter, string> kp in parameters)
-                    MessageBox.Show(kp.Key + "=" + kp.Value);
+                    MessageBox.Show(kp.Key + "=" + kp.Value);*/
 
             UpdateService updateService = new UpdateService(worker, parameters);
 
