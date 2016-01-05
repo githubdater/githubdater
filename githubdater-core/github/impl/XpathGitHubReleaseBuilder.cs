@@ -19,7 +19,7 @@ namespace NGitHubdater
 
             string tag = releaseNode.SelectSingleNode("//span[@class='css-truncate-target']").InnerText;
             string name = releaseNode.SelectSingleNode("//h1[@class='release-title']//a").InnerText;
-            string htmlBody = releaseNode.SelectSingleNode("//div[@class='markdown-body']").InnerHtml;
+            string htmlBody = releaseNode.SelectSingleNode("//div[@class='markdown-body']")?.InnerHtml;
 
             HtmlNodeCollection binariesNodes = releaseNode.SelectNodes("//ul[@class='release-downloads']//a[@href]");
 
