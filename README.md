@@ -1,3 +1,7 @@
+# GitHubdater
+
+![Screen Cap](http://imgur.com/Wia1kl7)
+
 ##Command line usage
 
 ###Synopsis
