@@ -15,6 +15,8 @@ namespace NGitHubdater
 {
     public class Updater : IUpdater
     {
+        private const string DownloadRootDirectoryName = "versions";
+
         private readonly IUpdateManifest manifest;
         private readonly IUpdateStatusProvider statusProvider;
         private readonly IUpdateDownloader downloader;
@@ -38,13 +40,12 @@ namespace NGitHubdater
 
         public DownloadResult Download(IVersion version, Action<DownloadProgress> callback)
         {
-            return downloader.Download(manifest, version, "versions", (progress) => { callback(progress); });
+            return downloader.Download(manifest, version, DownloadRootDirectoryName, (progress) => { callback(progress); });
         }
 
         public InstallResult Install(IVersion release, Action<IProgress> callback)
         {
-            return installer.Install(manifest, release.VersionFiles, "versions", AppDomain.CurrentDomain.BaseDirectory, (progress) => { callback(progress); });
+            return installer.Install(manifest, release.VersionFiles, DownloadRootDirectoryName, AppDomain.CurrentDomain.BaseDirectory, (progress) => { callback(progress); });
         }
-
     }
 }

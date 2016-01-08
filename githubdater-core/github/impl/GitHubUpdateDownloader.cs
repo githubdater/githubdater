@@ -34,7 +34,7 @@ namespace NGitHubdater
                     {
                         lock (lockThis)
                         {
-                            progress = new DownloadProgress("Downloading... " + file.Name, e.BytesReceived, e.TotalBytesToReceive);
+                            progress = new DownloadProgress(file.Name, e.BytesReceived, e.TotalBytesToReceive);
                             progressCallback(progress);
                         }
                     };
@@ -44,13 +44,13 @@ namespace NGitHubdater
                         if (e.Error != null)
                         {
                             if (progress == null)
-                                progressCallback(new DownloadProgress("Downloading... " + file.Name, 0, file.Length, e.Error));
+                                progressCallback(new DownloadProgress(file.Name, 0, file.Length, e.Error));
                             else
-                                progressCallback(new DownloadProgress("Downloading... " + file.Name, progress.BytesProcessed, progress.TotalBytesToProcess, e.Error));
+                                progressCallback(new DownloadProgress(file.Name, progress.BytesProcessed, progress.TotalBytesToProcess, e.Error));
                         }
                         else
                         {
-                            progress = new DownloadProgress("Downloading... Done", progress.TotalBytesToProcess, progress.TotalBytesToProcess);
+                            progress = new DownloadProgress("Done", progress.TotalBytesToProcess, progress.TotalBytesToProcess);
                             progressCallback(progress);
                         }
                     };

@@ -8,10 +8,12 @@ namespace NGitHubdater
 {
     public class DownloadProgress : FileProcessingProgress
     {
+        private const string DownloadingLabel = "Downloading...";
+
         public DownloadProgress(string title, long bytesProcessed, long totalBytesToProcess) 
-            : base(title, bytesProcessed, totalBytesToProcess) { }
+            : base(DownloadingLabel + " " + title, bytesProcessed, totalBytesToProcess) { }
 
         public DownloadProgress(string title, long bytesProcessed, long totalBytesToProcess, Exception error)
-            : base(title, bytesProcessed, totalBytesToProcess, error) { }
+            : base(DownloadingLabel + " " + title, bytesProcessed, totalBytesToProcess, error) { }
     }
 }
