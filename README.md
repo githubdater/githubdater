@@ -1,6 +1,6 @@
 # GitHubdater
 
-![Screen Cap](http://imgur.com/Wia1kl7)
+![Screen Cap](githubdater-app/githubdater-preparing-screencap.png)
 
 ##Command line usage
 
