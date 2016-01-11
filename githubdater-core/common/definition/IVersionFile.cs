@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 namespace NGitHubdater
 {
     /// <summary>
-    /// Represents a file to handle during the update process (download and install)
+    /// Represents a file published by a release version.
     /// </summary>
     public interface IVersionFile
     {
         /// <summary>
-        /// The name of the file with its extension (without its full path)
+        /// The <b>name</b> of the file (with its extension).
         /// </summary>
         string Name { get; }
 
         /// <summary>
-        /// The size of the file in bytes
+        /// The size of the file (in bytes).
         /// </summary>
         long Length { get; }
 
         /// <summary>
-        /// The remote Uri of the release file
+        /// The remote Uri of the release file.
         /// </summary>
         Uri Uri { get; }
     }
