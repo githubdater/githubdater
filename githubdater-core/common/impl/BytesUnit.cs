@@ -24,25 +24,21 @@ namespace NGitHubdater
             }
         }
 
-        private readonly int order;
-        private readonly string unit;
-        private readonly string shortHandle;
-
         private BytesUnit(int order, string unit, string shortHandle)
         {
-            this.order = order;
-            this.unit = unit;
-            this.shortHandle = shortHandle;
+            this.Order = order;
+            this.Unit = unit;
+            this.ShortHandle = shortHandle;
         }
 
-        public int Order { get { return order; } }
-        public string Unit { get { return unit; } }
-        public string ShortHandle { get { return shortHandle; } }
+        public int Order { get; }
+        public string Unit { get; }
+        public string ShortHandle { get; }
 
         public static BytesUnit FromOrder(int order)
         {
             foreach(BytesUnit unit in Values)
-                if (unit.order == order)
+                if (unit.Order == order)
                     return unit;
 
             throw new InvalidOperationException("Unit with order '" + order + "' can't be processed.");
@@ -55,8 +51,8 @@ namespace NGitHubdater
                 int max = 0;
 
                 foreach (BytesUnit unit in Values)
-                    if (unit.order > max)
-                        max = unit.order;
+                    if (unit.Order > max)
+                        max = unit.Order;
 
                 return max;
             }
@@ -64,10 +60,10 @@ namespace NGitHubdater
 
         public long Convert(long bytes)
         {
-            if (this.order == 0)
+            if (this.Order == 0)
                 return bytes;
 
-            for(int i = 1; i <= this.order; i++)
+            for(int i = 1; i <= this.Order; i++)
                 bytes = bytes / 1024;
 
             return bytes;
@@ -92,7 +88,7 @@ namespace NGitHubdater
 
         public override int GetHashCode()
         {
-            return unit.GetHashCode();
+            return Unit.GetHashCode();
         }
 
         public override bool Equals(object obj)
@@ -111,7 +107,7 @@ namespace NGitHubdater
 
         public override string ToString()
         {
-            return unit;
+            return Unit;
         }
     }
 }
