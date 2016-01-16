@@ -7,6 +7,9 @@ using System.Xml.Serialization;
 
 namespace NGitHubdater
 {
+    /// <summary>
+    /// Represents an updatable application.
+    /// </summary>
     [Serializable]
     public class Application
     {
@@ -19,10 +22,19 @@ namespace NGitHubdater
             this.SerializableVersion = new VersionAdapter(version);
         }
 
+        /// <summary>
+        /// The name of the application.
+        /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// The current version of the application implementing the adapter pattern, used for serialization.
+        /// </summary>
         public VersionAdapter SerializableVersion { get; set; }
 
+        /// <summary>
+        /// The current version of the application.
+        /// </summary>
         [XmlIgnore]
         public IVersion Version { get; set; }
 

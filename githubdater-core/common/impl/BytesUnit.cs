@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NGitHubdater
 {
+    /// <summary>
+    /// Represents a unit of measurement for data. 1 byte = 8 bits.
+    /// </summary>
     public sealed class BytesUnit
     {
         public static BytesUnit Byte = new BytesUnit(0, "Byte", "B");
@@ -31,10 +34,26 @@ namespace NGitHubdater
             this.ShortHandle = shortHandle;
         }
 
+        /// <summary>
+        /// The order of the unit, from 0 (Byte) to 3 (GigaByte).
+        /// </summary>
         public int Order { get; }
+
+        /// <summary>
+        /// The unit label (e.g. KiloByte).
+        /// </summary>
         public string Unit { get; }
+
+        /// <summary>
+        /// The unit short handle (e.g. kb for KiloByte).
+        /// </summary>
         public string ShortHandle { get; }
 
+        /// <summary>
+        /// Static constructor used to instanciate a <see cref="BytesUnit"/> from a given <see cref="Order"/>.
+        /// </summary>
+        /// <param name="order">The order used to instanciate the <see cref="BytesUnit"/></param>.
+        /// <returns></returns>
         public static BytesUnit FromOrder(int order)
         {
             foreach(BytesUnit unit in Values)
@@ -44,6 +63,9 @@ namespace NGitHubdater
             throw new InvalidOperationException("Unit with order '" + order + "' can't be processed.");
         }
 
+        /// <summary>
+        /// The maximum <see cref="Order"/> handled by the <see cref="BytesUnit"/> class.
+        /// </summary>
         public static int MaxOrder
         {
             get
@@ -58,6 +80,11 @@ namespace NGitHubdater
             }
         }
 
+        /// <summary>
+        /// Convert a given bytes quantity into the <see cref="BytesUnit"/> equivalent.
+        /// </summary>
+        /// <param name="bytes">The bytes number to convert.</param>
+        /// <returns></returns>
         public long Convert(long bytes)
         {
             if (this.Order == 0)
@@ -68,7 +95,13 @@ namespace NGitHubdater
 
             return bytes;
         }
-        
+
+        /// <summary>
+        /// <para>Convert a given bytes quantity into the most readable form for a human.</para>
+        /// <para>The most readable form is the one where the bytes number is less than 1000.</para>
+        /// </summary>
+        /// <param name="bytes">The bytes number to convert.</param>
+        /// <returns>A key/value pair with the new bytes number as the key and the <see cref="BytesUnit"/> as the value.</returns>
         public static KeyValuePair<long, BytesUnit> GetHumanReadable(long bytes)
         {
             int order = 0;
