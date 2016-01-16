@@ -59,7 +59,7 @@
     <Compile Include="github\impl\GitHubRepository.cs" />
     <Compile Include="github\impl\GitHubStatusProvider.cs" />
     <Compile Include="github\impl\GitHubUpdateDownloader.cs" />
-    <Compile Include="common\impl\ApplicationAdapter.cs" />
+    <Compile Include="common\impl\Application.cs" />
     <Compile Include="common\definition\IUpdateDownloader.cs" />
     <Compile Include="common\definition\IFileProcessingResult.cs" />
     <Compile Include="github\impl\GitHubLatestReleaseHtmlBuilder.cs" />

@@ -8,12 +8,11 @@ using System.Xml.Serialization;
 namespace NGitHubdater
 {
     [Serializable]
-    [XmlType(TypeName = "Application")]
-    public class ApplicationAdapter
+    public class Application
     {
-        private ApplicationAdapter() { /* for serialization */ }
+        private Application() { /* for serialization */ }
 
-        public ApplicationAdapter(string name, IVersion version)
+        public Application(string name, IVersion version)
         {
             this.Name = name;
             this.Version = version;
@@ -40,7 +39,7 @@ namespace NGitHubdater
             if (obj == null)
                 return false;
 
-            if (obj is ApplicationAdapter)
+            if (obj is Application)
                 return this.GetHashCode() == obj.GetHashCode();
 
             return false;

@@ -15,9 +15,9 @@ namespace NGitHubdater
     {
         /// <summary>
         /// The application to update.
-        /// TODO: define an interface for <see cref="ApplicationAdapter"/>.
+        /// TODO: define an interface for <see cref="NGitHubdater.Application"/>.
         /// </summary>
-        ApplicationAdapter Application { get; }
+        Application Application { get; }
 
         /// <summary>
         /// The repository of the application to update. Most of the time it will be a Git repository but it can be anything else.

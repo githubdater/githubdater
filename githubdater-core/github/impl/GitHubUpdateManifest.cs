@@ -29,7 +29,7 @@ namespace NGitHubdater
 
         private GitHubUpdateManifest() { /* for serialization */ }
 
-        public GitHubUpdateManifest(ApplicationAdapter application, IRepository repository, bool allowPreRelease, InstallType installType)
+        public GitHubUpdateManifest(Application application, IRepository repository, bool allowPreRelease, InstallType installType)
         {
             this.Application = application;
             this.Repository = repository;
@@ -37,7 +37,7 @@ namespace NGitHubdater
             this.InstallType = installType;
         }
 
-        public ApplicationAdapter Application { get; set; }
+        public Application Application { get; set; }
         public IRepository Repository { get; private set; }
         public bool AllowPreRelease { get; private set; }
         public InstallType InstallType { get; private set; }
@@ -81,7 +81,7 @@ namespace NGitHubdater
             InstallType installType = InstallType.Parse(strInstallType);
 
             VersionAdapter version = new VersionAdapter(versionTag, versionPreRelease);
-            ApplicationAdapter application = new ApplicationAdapter(applicationName, version);
+            Application application = new Application(applicationName, version);
 
             this.Application = application;
             this.Repository = repository;
