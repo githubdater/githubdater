@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NGitHubdater
 {
+    /// <summary>
+    /// Represents the progress of a download process.
+    /// </summary>
     public class DownloadProgress : FileProcessingProgress
     {
         private const string DownloadingLabel = "Downloading...";

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NGitHubdater
 {
+    /// <summary>
+    /// Represents the progress of a process involving file(s) manipulation.
+    /// </summary>
     public class FileProcessingProgress : IProgress
     {
         private readonly string title;
