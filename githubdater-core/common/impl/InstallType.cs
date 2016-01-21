@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace NGitHubdater
 {
+    /// <summary>
+    /// <para>Represents an install type for an updtadable application.</para>
+    /// <para>An install type is a process that takes downloaded files and copy them where they
+    /// need to be. It can also involve file extraction or any other file processing method.</para>
+    /// </summary>
     [Serializable]
     public class InstallType : IEquatable<string>
     {
