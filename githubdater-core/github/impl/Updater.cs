@@ -38,9 +38,9 @@ namespace NGitHubdater
             return statusProvider.GetStatus(manifest);
         }
 
-        public DownloadResult Download(IVersion version, Action<DownloadProgress> callback)
+        public async Task<DownloadResult> Download(IVersion version, Action<DownloadProgress> callback)
         {
-            return downloader.Download(manifest, version, DownloadRootDirectoryName, (progress) => { callback(progress); });
+            return await downloader.Download(manifest, version, DownloadRootDirectoryName, (progress) => { callback(progress); });
         }
 
         public InstallResult Install(IVersion release, Action<IProgress> callback)

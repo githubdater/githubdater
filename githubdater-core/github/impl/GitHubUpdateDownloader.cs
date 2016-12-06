@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace NGitHubdater
@@ -13,7 +11,7 @@ namespace NGitHubdater
         public string Name { get { return "GitHub Update Downloader" ;} }
         public string ShortHandle { get { return "GitHub"; } }
 
-        public DownloadResult Download(IUpdateManifest manifest, IVersion targetVersion, string targetDirectory, Action<DownloadProgress> progressCallback)
+        public async Task<DownloadResult> Download(IUpdateManifest manifest, IVersion targetVersion, string targetDirectory, Action<DownloadProgress> progressCallback)
         {
             if (Directory.Exists(targetDirectory))
                 Directory.Delete(targetDirectory, true);
@@ -55,10 +53,13 @@ namespace NGitHubdater
                         }
                     };
 
-                    string localPath = Path.Combine(targetDirectory, Path.GetFileName(file.Uri.ToString()));
-                    wc.DownloadFileTaskAsync(file.Uri, localPath).Wait();
+                    string downloadedFileRoot = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, targetDirectory);
+                    string downloadedFilePath = Path.Combine(downloadedFileRoot, Path.GetFileName(file.Uri.ToString()));
+
+                    await wc.DownloadFileTaskAsync(file.Uri, downloadedFilePath);
                 }
             }
+            
 
             if (progress.Error == null)
                 return new DownloadResult(progress.BytesProcessed);

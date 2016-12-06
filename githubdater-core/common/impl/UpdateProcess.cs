@@ -107,13 +107,13 @@ namespace NGitHubdater
             
         }
 
-        public void Execute(Action<IProgress> progressCallback)
+        public async void Execute(Action<IProgress> progressCallback)
         {
             var status = updater.Status();
 
             if (!status.UpToDate)
             {
-                DownloadResult downloadResult = updater.Download(status.LatestVersion, (downloadProgress) =>
+                DownloadResult downloadResult = await updater.Download(status.LatestVersion, (downloadProgress) =>
                 {
                     progressCallback(downloadProgress);
                 });

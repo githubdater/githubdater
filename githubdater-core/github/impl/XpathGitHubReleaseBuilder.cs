@@ -40,10 +40,12 @@ namespace NGitHubdater
                         string binaryName = binaryDownloadUrl.Split('/').Last();
                         long binarySize = 0;
 
-                        WebClient wc = new WebClient();
-                        wc.OpenRead(binaryDownloadUrl);
-                        binarySize = long.Parse(wc.ResponseHeaders["Content-Length"]);
-
+                        using (WebClient wc = new WebClient())
+                        {
+                            wc.OpenRead(binaryDownloadUrl);
+                            binarySize = long.Parse(wc.ResponseHeaders["Content-Length"]);
+                        }
+                            
                         releaseFiles.Add(new RemoteFile(binaryName, binarySize, binaryDownloadUrl));
                     }
                 }

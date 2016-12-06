@@ -25,7 +25,7 @@ namespace NGitHubdater
         /// <param name="version">The release version to download.</param>
         /// <param name="callback">The download progress callback.</param>
         /// <returns>The result of the download process.</returns>
-        DownloadResult Download(IVersion version, Action<DownloadProgress> callback);
+        Task<DownloadResult> Download(IVersion version, Action<DownloadProgress> callback);
 
         /// <summary>
         /// Handle the process of installing the update.
