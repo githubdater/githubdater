@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace NGitHubdater
 {
@@ -42,8 +43,10 @@ namespace NGitHubdater
 
                         using (WebClient wc = new WebClient())
                         {
-                            wc.OpenRead(binaryDownloadUrl);
-                            binarySize = long.Parse(wc.ResponseHeaders["Content-Length"]);
+                            using (Stream stream = wc.OpenRead(binaryDownloadUrl))
+                            {
+                                binarySize = long.Parse(wc.ResponseHeaders["Content-Length"]);
+                            }
                         }
                             
                         releaseFiles.Add(new RemoteFile(binaryName, binarySize, binaryDownloadUrl));

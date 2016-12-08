@@ -26,9 +26,9 @@ namespace NGitHubdater
         /// </summary>
         /// <param name="manifest">The update manifest.</param>
         /// <param name="targetVersion">The release version to download.</param>
-        /// <param name="targetDirectory">The directory where downloaded files will be placed.</param>
+        /// <param name="targetDirectoryName">The name of the directory where downloaded files will be placed.</param>
         /// <param name="progressCallback">The download progress callback.</param>
         /// <returns>The result of the download process.</returns>
-        Task<DownloadResult> Download(IUpdateManifest manifest, IVersion targetVersion, string targetDirectory, Action<DownloadProgress> progressCallback);
+        Task<DownloadResult> Download(IUpdateManifest manifest, IVersion targetVersion, string targetDirectoryName, Action<DownloadProgress> progressCallback);
     }
 }

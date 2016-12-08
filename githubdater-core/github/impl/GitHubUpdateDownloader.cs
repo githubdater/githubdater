@@ -11,8 +11,11 @@ namespace NGitHubdater
         public string Name { get { return "GitHub Update Downloader" ;} }
         public string ShortHandle { get { return "GitHub"; } }
 
-        public async Task<DownloadResult> Download(IUpdateManifest manifest, IVersion targetVersion, string targetDirectory, Action<DownloadProgress> progressCallback)
+        public async Task<DownloadResult> Download(IUpdateManifest manifest, IVersion targetVersion, string targetDirectoryName, Action<DownloadProgress> progressCallback)
         {
+            string applicationRoot = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string targetDirectory = Path.Combine(applicationRoot, targetDirectoryName);
+
             if (Directory.Exists(targetDirectory))
                 Directory.Delete(targetDirectory, true);
 
@@ -53,8 +56,7 @@ namespace NGitHubdater
                         }
                     };
 
-                    string downloadedFileRoot = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, targetDirectory);
-                    string downloadedFilePath = Path.Combine(downloadedFileRoot, Path.GetFileName(file.Uri.ToString()));
+                    string downloadedFilePath = Path.Combine(targetDirectory, Path.GetFileName(file.Uri.ToString()));
 
                     await wc.DownloadFileTaskAsync(file.Uri, downloadedFilePath);
                 }
