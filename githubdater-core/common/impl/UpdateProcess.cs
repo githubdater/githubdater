@@ -107,7 +107,7 @@ namespace NGitHubdater
             
         }
 
-        public async void Execute(Action<IProgress> progressCallback)
+        public async Task Execute(Action<IProgress> progressCallback)
         {
             var status = updater.Status();
 

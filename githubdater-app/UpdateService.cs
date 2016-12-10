@@ -47,9 +47,11 @@ namespace GitHubdater
             Process initiatingProcess = GetInitiatingProcess(providedParameters);
             string followUpProcessPath = GetParameterValue<string>(CommandLineParameter.FollowUpProcess, providedParameters);
 
-            updateProcess.Execute((progress) => {
+            Task updateTask = updateProcess.Execute((progress) => {
                 this.worker.ReportProgress(progress.Percentage, progress);
             });
+
+            updateTask.Wait();
         }
 
         private static Process GetInitiatingProcess(IDictionary<CommandLineParameter, string> parameters)
