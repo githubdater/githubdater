@@ -1,11 +1,4 @@
-﻿using HtmlAgilityPack;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NGitHubdater
+﻿namespace NGitHubdater
 {
     /// <summary>
     /// Represents a service able to build a <see cref="GitHubRelease"/> from it's HTML.

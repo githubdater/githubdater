@@ -1,15 +1,5 @@
-﻿using HtmlAgilityPack;
-using NGitHubdater;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Reflection;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace NGitHubdater
 {

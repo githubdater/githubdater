@@ -56,9 +56,6 @@
     <Compile Include="common\impl\SingleZipInstaller.cs" />
     <Compile Include="common\impl\VersionAdapter.cs" />
     <Compile Include="common\impl\VersionFileAdapter.cs" />
-    <Compile Include="github\impl\CustomWebClient.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="github\impl\GitHubRepository.cs" />
     <Compile Include="github\impl\GitHubStatusProvider.cs" />
     <Compile Include="github\impl\GitHubUpdateDownloader.cs" />
