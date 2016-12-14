@@ -1,15 +1,29 @@
 <?xml version="1.0"?>
 <GitHubUpdateManifest>
+  <!-- The "Name" attribute is shown to the user when the application is being updated. -->
   <Application Name="GitHubdater Sample App">
+    <!-- The "Tag" attribute represents the current version of the application (mapped with GitHub releases' tags). 
+          Locally, it is compared with the latest remote release's manifest to determine if an update is necessary. -->
+    <!-- The "IsPreRelease" attribute marks the current version as being a pre-release (or not).
+          Versions (releases) tagged as pre-releases will not be downloaded when the local "AllowPreRelease" (see below) tag is set to "False". -->
     <Version Tag="v0.0.0" IsPreRelease="False" />
   </Application>
   <GitHubRepository>
+    <!-- The "Owner" tag represents the owner of the GitHub repository (namespace). -->
     <Owner>githubdater</Owner>
+    <!-- The "Name" tag represents the name of the GitHub repository. -->
     <Name>sample-app</Name>
     <ReleaseFiles>
+      <!-- Add a "string" tag for each release file to download. 
+            In the current scenario, only a single file (.zip containing binaries, resources...) is necessary.
+            A "{version}" variable is available in case you put the release tag (version) inside the file name. -->
       <string>githubdater-sample-app-{version}.zip</string>
     </ReleaseFiles>
   </GitHubRepository>
+  <!-- Set this "AllowPreRelease" tag value to "True" if you want pre-releases to be downloaded (see "Version" tag), "False" otherwise. -->
   <AllowPreRelease>False</AllowPreRelease>
+  <!-- The "InstallType" tag is used to define the installation method of the downloaded releases' packages.
+        The "single-zip" value means that only a single file (.zip) needs to be downloaded.
+        Currently, only "single-zip" is supported as an "InstallType". -->
   <InstallType>single-zip</InstallType>
 </GitHubUpdateManifest>
