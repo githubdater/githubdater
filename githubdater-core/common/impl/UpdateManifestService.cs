@@ -6,8 +6,8 @@ namespace NGitHubdater
 {
     public class UpdateManifestService
     {
-        private const string GitHubUpdateManifestFileName = "github.update.manifest";
-        private const string GitLabUpdateManifestFileName = "gitlab.update.manifest";
+        private const string GitHubUpdateManifestFileName = "github.manifest.xml";
+        private const string GitLabUpdateManifestFileName = "gitlab.manifest.xml";
 
         private static readonly string GitHubUpdateManifestPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, GitHubUpdateManifestFileName);
         private static readonly string GitLabUpdateManifestPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, GitHubUpdateManifestFileName);

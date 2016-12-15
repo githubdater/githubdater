@@ -5,7 +5,7 @@
 ## Getting started
 1. Obtain ([releases page](https://github.com/githubdater/githubdater/releases)) the updater executable and its configuration file (the update manifest)
 2. Put these two files at the root of the application you want to update automatically
-3. Edit the update manifest (XML) with appropriate values (instructions provided within the file, example [here](https://github.com/githubdater/githubdater/blob/master/githubdater-app/github.update.manifest))
+3. Edit the update manifest (XML) with appropriate values (instructions provided within the file, example [here](https://github.com/githubdater/githubdater/blob/master/githubdater-app/github.manifest.xml))
 4. Call the updater executable within your application (any language) when you want to update it (typically at launch time, example [here](https://github.com/githubdater/sample-app/blob/master/githubdater-sample-app/Program.cs))
 
 ## Command line usage
