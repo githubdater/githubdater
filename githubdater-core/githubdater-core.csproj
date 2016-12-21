@@ -77,7 +77,6 @@
     <Compile Include="common\definition\IVersionFile.cs" />
     <Compile Include="common\definition\IUpdateStatusProvider.cs" />
     <Compile Include="common\definition\IVersion.cs" />
-    <Compile Include="common\impl\LocalFile.cs" />
     <Compile Include="common\impl\RemoteFile.cs" />
     <Compile Include="common\impl\UpdateManifestService.cs" />
     <Compile Include="common\impl\UpdateManifestType.cs" />
